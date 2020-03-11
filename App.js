@@ -1,12 +1,18 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-// import TitledInput from './src/components/TitledInput/TitledInput';
 import { containerStyles } from './src/styles/containers';
 import Button from './src/components/Button/Button';
 import IconInput from './src/components/Inputs/IconIput/IconInput';
+import TitledInput from './src/components/Inputs/TitledInput/TitledInput';
+import BasicFlatList from './src/components/Lists/BasicFlatList';
+import Row from './src/temp/Row';
 
 export default function App() {
-  const [value, setvalue] = useState('')  
+  const [value, setvalue] = useState([
+    {id: 1, title: 'Hello', class: 'Bulla'},
+    {id: 2, title: 'Hello1', class: 'Bulla1'},
+    {id: 3, title: 'Hello2', class: 'Bulla2'},
+  ])  
   
   return (
     <View style={styles.container}>
@@ -19,7 +25,7 @@ export default function App() {
             secureText: false,
             onChangeText: (ipvalue) => setvalue(ipvalue),
           }}
-        /> */}
+        />
         <IconInput
           config={{
             value: value,
@@ -31,7 +37,25 @@ export default function App() {
           iconSource={require('./src/assets/employer.png')}
           iconStyle={{tintColor: '#7b7c83'}}
         />
-        {/* <Button title="LOG IN"/> */}
+        <Button title="LOG IN"/> */}
+        <BasicFlatList
+          data={value}
+          RowItem={Row}
+          unique_key="id"
+          containerStyle={{
+            borderWidth: 1,
+            borderColor:'red',
+            width: '90%',
+            // padding: 4,
+          }}
+          listContainerStyle={{
+            borderWidth: 1,
+            margin: 4,
+          }}
+          listStyle={{
+            // borderWidth: 1
+          }}
+        />
       </View>
     </View>
   );
