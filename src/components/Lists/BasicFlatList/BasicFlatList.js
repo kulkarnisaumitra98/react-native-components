@@ -33,7 +33,7 @@ const BasicFlatList = (props) => {
                 ListFooterComponent={}
                 ListFooterComponentStyle={{ width: '100%' }}
                 stickyHeaderIndices={[0]}
-                ListEmptyComponent={}
+                ListEmptyComponent={} 
             />
         </View>
     )
