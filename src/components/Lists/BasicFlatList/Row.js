@@ -5,7 +5,7 @@ const Row = (props) => {
     return (
         <View style={styles.container}>
             <Text style={[styles.cell, styles.cell1]}>{props.title}</Text>
-            <Text style={[styles.cell, styles.cell2]}>{props.class}</Text>
+            <Text style={[styles.cell, styles.cell2]}>{props.info}</Text>
         </View>
     )
 }
@@ -18,14 +18,13 @@ const styles = StyleSheet.create({
     },
 
     cell: {
-            borderWidth: 0.5,
-            borderColor: '#dddddd80'
+        borderWidth: 0.5,
+        borderColor: '#dddddd80'
     },
 
     cell1: {
         width: '50%',
-        padding: 4,
-        fontSize: 18,
+        padding: 4,        
         textAlign: 'center'
     },
 
