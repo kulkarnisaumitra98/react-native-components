@@ -76,6 +76,8 @@ const BasicFlatList = (props) => {
                 ListFooterComponent={<ListFooter/>} // This component gets rendered below List
                 ListFooterComponentStyle={styles.listfooter}    // Footer Component style
                 ListEmptyComponent={<EmptyComponent/>} // If no Data is present
+                
+                
 
                 // extraData={} // Used to rerender list for some external side effect
                 // stickyHeaderIndices={[0]}  // Can make any index stick to top
@@ -86,7 +88,7 @@ const BasicFlatList = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-
+        
     },
 
     listheader: {
