@@ -28,7 +28,7 @@ const HelpTextAlert = (props) => {
                 <View style={{ borderRadius: props.size }}>
                     <Image 
                         style={{ width: props.size, height: props.size }} 
-                        source={require('../../assets/question.png')}                         
+                        source={require('./question.png')}                         
                     />
                 </View>
             </TouchableOpacity>

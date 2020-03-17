@@ -14,7 +14,7 @@ const TitledInput = ({
             <TextInput
                 style={[styles.inputContainer, textInputStyle]}
                 {...config}
-            />                          
+            />     
         </View>
     )
 }
@@ -28,8 +28,7 @@ const styles = StyleSheet.create({
 
     inputContainer:{
         borderRadius: 4,
-        width: '100%',
-        marginTop: 8,
+        width: '100%',        
         borderBottomWidth: 0.5,
         elevation: 2,
         backgroundColor: '#fff',
@@ -48,7 +47,8 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 12,
         fontFamily: 'sans-serif',
-        color: '#2b2d38'
+        color: '#2b2d38',
+        marginBottom: 8,
     },
 });
 

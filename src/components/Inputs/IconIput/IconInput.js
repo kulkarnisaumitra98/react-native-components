@@ -1,15 +1,21 @@
 import React from 'react'
 import { Image, View, StyleSheet, TextInput} from 'react-native';
 
+const iconWidth = 15
+
 const IconInput = ({
     textInputStyle,
     iconSource,
     iconStyle,
-    config
+    iconContStyle,
+    config,
+    title,
+    titleStyle,
 }) => {
     return (
         <View style={styles.searchBox}>
-            <View style={styles.iconCont}>
+            {title ? <Text style={[styles.title, titleStyle]}>{title}</Text> : <React.Fragment/>}                                         
+            <View style={[styles.iconCont, iconContStyle]}>
                 <Image
                     style={[styles.icon, iconStyle]}
                     resizeMode="contain"
@@ -26,8 +32,7 @@ const IconInput = ({
 
 const styles = StyleSheet.create({
     searchBox: {
-        width: '100%',
-        // marginTop: 16,
+        width: '100%',        
         position: 'relative',
         flexDirection: 'row',        
         elevation: 2,
@@ -37,6 +42,13 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 3 },
         shadowOpacity: 0.8,
         shadowRadius: 2,       
+    },
+
+    title: {
+        fontSize: 12,
+        fontFamily: 'sans-serif',
+        color: '#2b2d38',
+        marginBottom: 8,
     },
 
     inputContainer: {
@@ -49,7 +61,7 @@ const styles = StyleSheet.create({
     },
 
     icon: {
-        width: 15,
+        width: iconWidth,
     },
 
     iconCont: {
