@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
         backgroundColor: BLUE_BUTTON,
         borderRadius: 4,
         margin: 8,
+        elevation: 2,
     },
 
     text: {

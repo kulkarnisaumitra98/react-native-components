@@ -8,6 +8,8 @@ const width = 15
 const IconButton = ({
     handlePress,
     title,
+    size,
+    tintColor,
 
     contStyle,
     textStyle,
@@ -24,7 +26,7 @@ const IconButton = ({
             <View style={[iconContStyle]}>
                 <Image
                     source={iconSource}
-                    style={[{width}, iconStyle]}
+                    style={[{width}, iconStyle, {width: size, height: size, tintColor}]}
                     resizeMode="contain"
                 />
             </View>
@@ -42,6 +44,7 @@ const styles = StyleSheet.create({
         padding: 4,
         paddingLeft: 16,
         paddingRight: 16,
+        elevation: 2,
     },
 
     text: {
