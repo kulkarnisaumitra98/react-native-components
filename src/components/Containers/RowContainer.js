@@ -4,10 +4,12 @@ import {StyleSheet, View } from 'react-native'
 const RowContainer = ({
     justifyContent,
     contStyle,
+
+    children
 }) => {
     return (
         <View style={[styles.container, contStyle, {justifyContent}]}>
-            
+            {children}
         </View>
     )
 }
