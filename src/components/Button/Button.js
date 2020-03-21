@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { BLUE_BUTTON, WHITE } from '../../styles/colors'
 
 const Button = ({
     handlePress,
@@ -22,16 +23,16 @@ const styles = StyleSheet.create({
     container:{
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 8,
+        padding: 4,
         paddingLeft: 16,
         paddingRight: 16,
-        backgroundColor: '#6495ed',
+        backgroundColor: BLUE_BUTTON,
         borderRadius: 4,
         margin: 8,
     },
 
     text: {
-        color: '#fff',
+        color: WHITE,
         fontSize: 14,
     },
 })

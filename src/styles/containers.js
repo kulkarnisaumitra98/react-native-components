@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native'
 
 export const containerStyles = StyleSheet.create({
+    // fd Column 
     bothCenter: {
         width: '100%',
         alignItems: 'center',
@@ -21,5 +22,29 @@ export const containerStyles = StyleSheet.create({
         padding: 8,
         alignItems: 'center',
         width: '100%',
+    },
+
+    // fd Row
+    rowCont: {
+        flexDirection: 'row',
+        alignItems: 'center',        
+    },
+
+    centeredRow: {
+        flexDirection: 'row',
+        alignItems: 'center',        
+        justifyContent: 'center',
+    },
+
+    spaceAround: {
+        flexDirection: 'row',
+        alignItems: 'center',        
+        justifyContent: 'space-around',
+    },
+
+    spaceBetween: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
     }
 })
