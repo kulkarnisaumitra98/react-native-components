@@ -1,19 +1,14 @@
-import React from 'react'
-import {StyleSheet, View, PixelRatio } from 'react-native'
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
 
-const SmallCircle = (props) => {
-    console.log(PixelRatio.get(), "Pixel Ratio")
-    return (
-        <View style={styles.container}>
-
-        </View>
-    )
-}
+const SmallCircle = () => (
+  <View style={styles.container} />
+);
 
 const styles = StyleSheet.create({
-    container: {
+  container: {
 
-    }
-})
+  },
+});
 
-export default SmallCircle
+export default SmallCircle;

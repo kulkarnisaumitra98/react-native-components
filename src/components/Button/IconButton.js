@@ -5,14 +5,15 @@ import {
 import { containerStyles } from '../../styles/containers';
 import { BLUE_BUTTON, WHITE } from '../../styles/colors';
 import MyText from '../Texts/MyText';
-
-const width = 15;
+import { positionStyles, marginStyles, dimensionStyles } from '../../styles/style';
 
 const IconButton = ({
   handlePress,
   title,
   size,
+  long,
   tintColor,
+  right,
 
   contStyle,
   textStyle,
@@ -22,17 +23,22 @@ const IconButton = ({
 
 }) => (
   <TouchableOpacity
-    style={[containerStyles.centeredRow, styles.container, contStyle]}
+    style={[
+      containerStyles.centeredRow,
+      styles.container,
+      contStyle, right ? positionStyles.fdrr : null,
+      long ? dimensionStyles.w_100 : null,
+    ]}
     onPress={handlePress}
   >
-    <View style={[iconContStyle]}>
+    <View style={iconContStyle}>
       <Image
         source={iconSource}
-        style={[{ width }, iconStyle, { width: size, height: size, tintColor }]}
+        style={[iconStyle, { width: size, height: size, tintColor }]}
         resizeMode="contain"
       />
     </View>
-    <MyText style={[styles.text, textStyle]}>
+    <MyText style={[styles.text, textStyle, right ? marginStyles.mr_4 : null]}>
       {title}
     </MyText>
   </TouchableOpacity>
@@ -43,14 +49,14 @@ const styles = StyleSheet.create({
     backgroundColor: BLUE_BUTTON,
     borderRadius: 4,
     padding: 4,
-    paddingLeft: 16,
-    paddingRight: 16,
+    paddingLeft: 8,
+    paddingRight: 8,
     elevation: 2,
   },
 
   text: {
     color: WHITE,
-    marginLeft: 8,
+    marginLeft: 4,
   },
 });
 

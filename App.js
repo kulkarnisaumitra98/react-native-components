@@ -1,16 +1,30 @@
+/* eslint-disable react-native/no-inline-styles */
+
 import React from 'react';
-// import { StyleSheet, View, StatusBar } from 'react-native';
-import Button from './src/components/Button/Button';
+import { StatusBar } from 'react-native';
 import CenteredContainer from './src/components/Containers/CenteredContainer';
-import { paddingStyles } from './src/styles/spacing';
+import { paddingStyles } from './src/styles/style';
+import {
+  OFFWHITE, YELLOW, WHITE, BLACK,
+} from './src/styles/colors';
+import HelpTextAlert from './src/components/Common/HelpTextAlert/HelpTextAlert';
 
 export default function App() {
   return (
     <CenteredContainer
-      padding={paddingStyles.p_8}
-      contStyle={{ backgroundColor: '#f8f8f8' }}
+      padding={paddingStyles.p_0}
+      contStyle={{
+        backgroundColor: OFFWHITE,
+        borderColor: YELLOW,
+        borderWidth: 3,
+        marginTop: StatusBar.currentHeight,
+      }}
     >
-      <Button title="Click me" long containerStyle={[paddingStyles.p_8]} />
+      <HelpTextAlert
+        title="Hello"
+        text="Ayyy gandu lavdya"
+        size={18}
+      />
     </CenteredContainer>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Dimensions } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { WHITE } from '../../styles/colors';
 
 const CenteredContainer = ({
   contStyle,
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     padding: 8,
-    backgroundColor: '#fff',
+    backgroundColor: WHITE,
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { BLUE_BUTTON, WHITE } from '../../styles/colors';
-import { dimensionStyles } from '../../styles/spacing';
+import { dimensionStyles } from '../../styles/style';
 import MyText from '../Texts/MyText';
 
 const Button = ({
@@ -12,7 +12,7 @@ const Button = ({
   textStyle,
 }) => (
   <TouchableOpacity
-    style={[styles.container, containerStyle, long ? dimensionStyles.w_100 : {}]}
+    style={[styles.container, containerStyle, long ? dimensionStyles.w_100 : null]}
     onPress={handlePress}
   >
     <MyText style={[styles.text, textStyle]}>{title}</MyText>
