@@ -1,6 +1,9 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, StatusBar } from 'react-native';
 
 export const marginStyles = StyleSheet.create({
+
+  mtsb: { marginTop: StatusBar.currentHeight },
+
   m_0: { margin: 0 },
   m_2: { margin: 2 },
   m_4: { margin: 4 },
@@ -174,9 +177,14 @@ export const borderStyles = StyleSheet.create({
 
 export const positionStyles = StyleSheet.create({
   jcc: { justifyContent: 'center' },
+  jcfs: { justifyContent: 'flex-start' },
   jcfe: { justifyContent: 'flex-end' },
   jcsa: { justifyContent: 'space-around' },
   jcsb: { justifyContent: 'space-between' },
+
+  alc: { alignItems: 'center' },
+  alfs: { alignItems: 'flex-start' },
+  alfe: { alignItems: 'flex-end' },
 
   fdr: { flexDirection: 'row' },
   fdc: { flexDirection: 'column' },

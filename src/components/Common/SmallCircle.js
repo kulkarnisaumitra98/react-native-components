@@ -1,14 +1,23 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
-const SmallCircle = () => (
-  <View style={styles.container} />
+const SmallCircle = ({
+  color,
+  size,
+  contStyle,
+}) => (
+  <View
+    style={[{
+      width: size,
+      height: size,
+      borderRadius: size,
+      backgroundColor: color,
+      margin: 4,
+    },
+    contStyle,
+    ]}
+  />
 );
-
-const styles = StyleSheet.create({
-  container: {
-
-  },
-});
 
 export default SmallCircle;

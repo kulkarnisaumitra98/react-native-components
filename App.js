@@ -1,30 +1,107 @@
 /* eslint-disable react-native/no-inline-styles */
 
 import React from 'react';
-import { StatusBar } from 'react-native';
-import CenteredContainer from './src/components/Containers/CenteredContainer';
-import { paddingStyles } from './src/styles/style';
+import { Text } from 'react-native';
 import {
-  OFFWHITE, YELLOW, WHITE, BLACK,
-} from './src/styles/colors';
-import HelpTextAlert from './src/components/Common/HelpTextAlert/HelpTextAlert';
+  paddingStyles,
+  borderStyles,
+  marginStyles,
+} from './src/styles/style';
+import { BLUE_BUTTON } from './src/styles/colors';
+import RowContainer from './src/components/Containers/RowContainer';
+import SmallCircle from './src/components/Common/SmallCircle';
+import WrappedScrollView from './src/components/Containers/WrappedScrollView';
+import FlexedContainer from './src/components/Containers/FlexedContainer';
+import CenteredContainer from './src/components/Containers/CenteredContainer';
 
 export default function App() {
   return (
-    <CenteredContainer
-      padding={paddingStyles.p_0}
-      contStyle={{
-        backgroundColor: OFFWHITE,
-        borderColor: YELLOW,
-        borderWidth: 3,
-        marginTop: StatusBar.currentHeight,
-      }}
-    >
-      <HelpTextAlert
-        title="Hello"
-        text="Ayyy gandu lavdya"
-        size={18}
-      />
-    </CenteredContainer>
+    <FlexedContainer contStyle={marginStyles.mtsb}>
+      <CenteredContainer>
+        <WrappedScrollView>
+          <RowContainer
+            justifyContent="flex-start"
+            contStyle={borderStyles.bw_1}
+            padding={paddingStyles.p_0}
+            long
+          >
+            <SmallCircle color={BLUE_BUTTON} size={8} />
+            <Text>Hello Boi</Text>
+          </RowContainer>
+          <RowContainer
+            justifyContent="flex-start"
+            contStyle={borderStyles.bw_1}
+            padding={paddingStyles.p_0}
+            long
+          >
+            <SmallCircle color={BLUE_BUTTON} size={8} />
+            <Text>Hello Boi</Text>
+          </RowContainer>
+          <RowContainer
+            justifyContent="flex-start"
+            contStyle={borderStyles.bw_1}
+            padding={paddingStyles.p_0}
+            long
+          >
+            <SmallCircle color={BLUE_BUTTON} size={8} />
+            <Text>Hello Boi</Text>
+          </RowContainer>
+          <RowContainer
+            justifyContent="flex-start"
+            contStyle={borderStyles.bw_1}
+            padding={paddingStyles.p_0}
+            long
+          >
+            <SmallCircle color={BLUE_BUTTON} size={8} />
+            <Text>Hello Boi</Text>
+          </RowContainer>
+          <RowContainer
+            justifyContent="flex-start"
+            contStyle={borderStyles.bw_1}
+            padding={paddingStyles.p_0}
+            long
+          >
+            <SmallCircle color={BLUE_BUTTON} size={8} />
+            <Text>Hello Boi</Text>
+          </RowContainer>
+          <RowContainer
+            justifyContent="flex-start"
+            contStyle={borderStyles.bw_1}
+            padding={paddingStyles.p_0}
+            long
+          >
+            <SmallCircle color={BLUE_BUTTON} size={8} />
+            <Text>Hello Boi</Text>
+          </RowContainer>
+          <RowContainer
+            justifyContent="flex-start"
+            contStyle={borderStyles.bw_1}
+            padding={paddingStyles.p_0}
+            long
+          >
+            <SmallCircle color={BLUE_BUTTON} size={8} />
+            <Text>Hello Boi</Text>
+          </RowContainer>
+          <RowContainer
+            justifyContent="flex-start"
+            contStyle={borderStyles.bw_1}
+            padding={paddingStyles.p_0}
+            long
+          >
+            <SmallCircle color={BLUE_BUTTON} size={8} />
+            <Text>Hello Boi</Text>
+          </RowContainer>
+          <RowContainer
+            justifyContent="flex-start"
+            contStyle={borderStyles.bw_1}
+            padding={paddingStyles.p_0}
+            long
+          >
+            <SmallCircle color={BLUE_BUTTON} size={8} />
+            <Text>Hello Boi</Text>
+          </RowContainer>
+        </WrappedScrollView>
+      </CenteredContainer>
+    </FlexedContainer>
   );
 }
