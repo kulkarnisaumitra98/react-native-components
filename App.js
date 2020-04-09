@@ -1,66 +1,16 @@
 import React from 'react';
-import { StyleSheet, View} from 'react-native';
-import IconButton from './src/components/Button/IconButton';
+// import { StyleSheet, View, StatusBar } from 'react-native';
 import Button from './src/components/Button/Button';
-
+import CenteredContainer from './src/components/Containers/CenteredContainer';
+import { paddingStyles } from './src/styles/spacing';
 
 export default function App() {
   return (
-    <View style={styles.container}>  
-      <IconButton
-        iconSource={require('./src/components/Inputs/PasswordInput/eye.png')}
-        title="Hello"
-        contStyle={{width: '40%'}}
-      />
-      <Button
-        title="Gay"
-      />      
-    </View>
+    <CenteredContainer
+      padding={paddingStyles.p_8}
+      contStyle={{ backgroundColor: '#f8f8f8' }}
+    >
+      <Button title="Click me" long containerStyle={[paddingStyles.p_8]} />
+    </CenteredContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    borderWidth: 1,
-    borderColor: '#dd3',
-    backgroundColor: '#dff',
-    alignItems: 'center',
-    // paddingTop: 24,
-    marginTop: 24,
-    position: 'relative',
-  },
-
-  textCont: {
-    position: 'absolute',
-    top: 26,
-    zIndex: 1,
-    backgroundColor: 'red',
-    elevation: 3,
-  },
-
-  text: {
-    
-  },
-
-  inputContainer: {
-    borderRadius: 4,
-    width: '90%',
-    // marginTop: 8,
-    borderWidth: 1,
-    elevation: 2,
-    backgroundColor: '#fff',
-    borderColor: '#ddd',
-    letterSpacing: 0.3,
-    textAlignVertical: 'center',
-    padding: 4,
-    fontSize: 12,    
-    height: 38,
-
-    // shadowColor: '#000',
-    // shadowOffset: { width: 0, height: 3 },
-    // shadowOpacity: 0.8,
-    // shadowRadius: 2,
-  },
-
-});
