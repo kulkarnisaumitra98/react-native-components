@@ -1,9 +1,10 @@
 import React from 'react';
 import {
-  StyleSheet, View, Text, Alert, TouchableOpacity,
+  StyleSheet, View, Alert, TouchableOpacity,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { TEXT_BLACK } from '../../../styles/colors';
+import MyText from '../../Texts/MyText';
 
 const getAlert = (title, text, onPressOk, onPressCancel) => {
   Alert.alert(title, text,
@@ -32,11 +33,12 @@ const HelpTextAlert = ({
   contStyle,
   textStyle,
   iconContStyle,
+  textConfig,
 }) => (
   <View style={[styles.container, contStyle]}>
-    <Text style={[styles.title, textStyle]}>
+    <MyText {...textConfig} style={[styles.title, textStyle]}>
       {title}
-    </Text>
+    </MyText>
     <TouchableOpacity
       style={[styles.iconCont, iconContStyle]}
       onPress={() => getAlert(title, text, onPressOk, onPressCancel)}

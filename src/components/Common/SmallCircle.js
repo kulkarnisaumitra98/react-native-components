@@ -6,6 +6,7 @@ const SmallCircle = ({
   color,
   size,
   contStyle,
+  config,
 }) => (
   <View
     style={[{
@@ -17,6 +18,7 @@ const SmallCircle = ({
     },
     contStyle,
     ]}
+    {...config}
   />
 );
 

@@ -5,8 +5,12 @@ const Container = ({
   children,
   contStyle,
   padding,
+  config,
 }) => (
-  <View style={[styles.container, contStyle, padding]}>
+  <View
+    style={[styles.container, contStyle, padding]}
+    {...config}
+  >
     {children}
   </View>
 );

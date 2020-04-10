@@ -20,6 +20,8 @@ const IconButton = ({
   iconSource,
   iconContStyle,
   iconStyle,
+  touchConfig,
+  textConfig,
 
 }) => (
   <TouchableOpacity
@@ -30,6 +32,7 @@ const IconButton = ({
       long ? dimensionStyles.w_100 : null,
     ]}
     onPress={handlePress}
+    {...touchConfig}
   >
     <View style={iconContStyle}>
       <Image
@@ -38,7 +41,7 @@ const IconButton = ({
         resizeMode="contain"
       />
     </View>
-    <MyText style={[styles.text, textStyle, right ? marginStyles.mr_4 : null]}>
+    <MyText {...textConfig} style={[styles.text, textStyle, right ? marginStyles.mr_4 : null]}>
       {title}
     </MyText>
   </TouchableOpacity>

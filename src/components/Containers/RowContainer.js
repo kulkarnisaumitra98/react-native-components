@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { positionStyles, dimensionStyles } from '../../styles/style';
+import { dimensionStyles } from '../../styles/style';
 
 const RowContainer = ({
   justifyContent,
@@ -8,6 +8,7 @@ const RowContainer = ({
   padding,
   long,
   children,
+  config,
 }) => (
   <View style={[
     styles.container,
@@ -15,6 +16,7 @@ const RowContainer = ({
     padding,
     justifyContent ? { justifyContent } : null,
     long ? dimensionStyles.w_100 : null,
+    { ...config },
   ]}
   >
     {children}

@@ -13,6 +13,7 @@ const MyText = ({
 const styles = StyleSheet.create({
   text: {
     // Define Global texts here
+    height: 20,
   },
 });
 

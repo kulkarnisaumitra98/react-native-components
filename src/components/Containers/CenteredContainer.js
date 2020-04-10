@@ -6,8 +6,12 @@ const CenteredContainer = ({
   contStyle,
   children,
   padding,
+  config,
 }) => (
-  <View style={[styles.container, contStyle, padding]}>
+  <View
+    style={[styles.container, contStyle, padding]}
+    {...config}
+  >
     {children}
   </View>
 );
@@ -18,9 +22,10 @@ const styles = StyleSheet.create({
     width: '100%',
     padding: 8,
     backgroundColor: WHITE,
-    alignItems: 'center',
+    // alignItems: 'center',
+    alignSelf: 'baseline',
     justifyContent: 'center',
-    borderWidth: 0,
+    borderWidth: 2,
     borderColor: 'blue',
   },
 });
