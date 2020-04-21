@@ -22,10 +22,9 @@ const styles = StyleSheet.create({
     width: '100%',
     padding: 8,
     backgroundColor: WHITE,
-    // alignItems: 'center',
-    alignSelf: 'baseline',
+    alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 2,
+    borderWidth: 0,
     borderColor: 'blue',
   },
 });

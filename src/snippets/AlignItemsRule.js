@@ -12,8 +12,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    // This line makes the content wrap around itself (Width equal to its contents)
+    // alignItems: center makes the content wrap around itself (Width equal to its contents)
     // If we remove this the Text will have width equal to Parent
+
     // alignItems: 'center',
   },
 });

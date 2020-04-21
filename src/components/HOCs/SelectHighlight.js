@@ -1,61 +1,58 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 
-export default SelectHightlight = (WrappedComponent, optionArr) => {
-
-    return class extends React.Component {
-        constructor(props) {
-            super(props)
-            this.state = {
-                selecState: this.createArray(props.index),
-                selectedIndex: props.index,
-            };
-        }
+const SelectHightlight = (WrappedComponent) => class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selecState: this.createArray(props.index),
+      selectedIndex: props.index,
+    };
+  }
 
         createArray = (startIndex) => {
-            const arr = new Array(optionArr.length).fill(false)
-            arr[startIndex] = true
+          const arr = new Array(this.props.optionArr.length).fill(false);
+          arr[startIndex] = true;
 
-            return arr
+          return arr;
         }
 
         handlePress = (i) => {
-            let arr = new Array(optionArr.length).fill(false)
-            arr[i] = true
+          const arr = new Array(this.props.optionArr.length).fill(false);
+          arr[i] = true;
 
-            this.setState({
-                selecState: [...arr],
-                selectedIndex: i,
-            })
+          this.setState({
+            selecState: [...arr],
+            selectedIndex: i,
+          });
         }
 
-        renderComponents = (Comp, currentSelectedIndex, otherProps) => {    
-            return (
-                <React.Fragment>
-                    {this.state.selecState.map((state, i) => { 
-                        return (
-                        <Comp
-                            key={i}
-                            currentSelectedIndex={currentSelectedIndex}
-                            selected={state}
-                            handlePress={this.handlePress}
-                            index={i}
-                            {...optionArr[i]}
-                            {...otherProps}
-                        />
-                    )})}
-                </React.Fragment>
-            )
-        }
+        renderComponents = (Comp, currentSelectedIndex, otherProps) => (
+          <>
+            {this.state.selecState.map((state, i) => (
+              <Comp
+                key={i}
+                currentSelectedIndex={currentSelectedIndex}
+                selected={state}
+                handlePress={this.handlePress}
+                index={i}
+                {...this.props.optionArr[i]}
+                {...otherProps}
+              />
+            ))}
+          </>
+        )
 
         render() {
-            return (
-                <WrappedComponent
-                    selected={this.state.selectedIndex}
-                    handlePress={this.handlePress}
-                    renderComponents={this.renderComponents}
-                    {...this.props}
-                />
-            )
+          return (
+            <WrappedComponent
+              selected={this.state.selectedIndex}
+              handlePress={this.handlePress}
+              renderComponents={this.renderComponents}
+              {...this.props}
+            />
+          );
         }
-    }
-}
+};
+
+export default SelectHightlight;
