@@ -14,4 +14,4 @@ web-report/
 .DS_Store
 
 src/temp/*
-App.js
+src/Playground/*

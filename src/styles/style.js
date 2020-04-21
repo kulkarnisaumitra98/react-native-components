@@ -191,3 +191,5 @@ export const positionStyles = StyleSheet.create({
   fdrr: { flexDirection: 'row-reverse' },
   fdcr: { flexDirection: 'column-reverse' },
 });
+
+export const getSquare = (size) => ({ width: size, height: size });

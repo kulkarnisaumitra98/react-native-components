@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { TEXT_BLACK } from '../../../styles/colors';
-import MyText from '../../Texts/MyText';
+import MyText from '../MyText';
 
 const getAlert = (title, text, onPressOk, onPressCancel) => {
   Alert.alert(title, text,
