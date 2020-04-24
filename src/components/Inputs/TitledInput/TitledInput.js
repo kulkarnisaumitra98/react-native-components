@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Text, View, StyleSheet, TextInput,
-} from 'react-native';
+import { Platform, StyleSheet, Text, TextInput, View } from 'react-native';
 
 const TitledInput = ({
   containerStyle,
@@ -35,13 +33,15 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     letterSpacing: 0.3,
     textAlignVertical: 'center',
-    padding: 4,
-    fontSize: 12,
 
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
+
+    padding: Platform.OS === 'web' ? 12 : 4,
+    paddingLeft: Platform.OS === 'web' ? 12 : 8,
+    fontSize: Platform.OS === 'web' ? 14 : 12,
   },
 
   title: {
