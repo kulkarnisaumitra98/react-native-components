@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import { isEmpty } from '../../Utils/General';
+import { isEmpty } from '../../Utils/GeneralFunctions';
 
 
 // Some general form validations
