@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  StyleSheet, View, Text, ActivityIndicator,
-} from 'react-native';
+import { StyleSheet, View, Text, ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 import { fetchDummyData } from '../../store/actions/asyncActions';
 
@@ -20,7 +18,7 @@ const AsyncFunctional = (props) => {
     <View style={styles.container}>
       <Text>Functional Component</Text>
       {data ? (
-			  data.map((item) => <Text key={item.id}>{item.employee_name}</Text>)
+        data.map((item) => <Text key={item.id}>{item.employee_name}</Text>)
       ) : (
         <ActivityIndicator size="large" />
       )}
@@ -29,9 +27,7 @@ const AsyncFunctional = (props) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-
-  },
+  container: {},
 });
 
 export default connect((state) => state)(AsyncFunctional);
