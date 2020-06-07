@@ -9,11 +9,17 @@ export const BLACK = '#000';
 export const YELLOW = '#FFFF00';
 
 // Blue
+export const BLUE = 'blue';
+export const BLUE_1 = '#416ce1';
 export const BLUE_BUTTON = '#6495ed';
 
 // Text colors
 export const TEXT_BLACK = '#2b2d38';
+export const TEXT_BLACK_1 = '#404a57';
 export const BLACK_HEADER = '#212529';
+
+// Border colors
+export const BORDER = '#ddd';
 
 // Purpose colors
 

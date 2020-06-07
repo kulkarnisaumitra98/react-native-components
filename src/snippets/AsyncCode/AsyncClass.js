@@ -4,6 +4,11 @@ import { connect } from 'react-redux';
 import { fetchDummyData } from '../../store/actions/asyncActions';
 
 class AsyncClass extends Component {
+  constructor(params) {
+    super(params);
+
+    this.count = React.createRef(0);
+  }
   state = {
     data: null,
   };
@@ -14,11 +19,13 @@ class AsyncClass extends Component {
 
   fetchData = async () => {
     await this.props.dispatch(fetchDummyData());
-
+    console.log(this.props.data, 'class data'); // -> prints the data
     this.setState({ data: this.props.data });
   };
 
   render() {
+    console.log(this.count.current++, 'class');
+
     return (
       <View>
         <Text>Class Component</Text>

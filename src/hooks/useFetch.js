@@ -1,14 +1,8 @@
-/* eslint-disable import/prefer-default-export */
 import { useState } from 'react';
 import { axiosGet } from '../Utils/Server/AxiosConfig';
 import useDidUpdate from './useDidUpdate';
 
-export const useFetch = (
-  url,
-  params,
-  processData = (data) => data,
-  reload,
-) => {
+export const useFetch = (url, params, processData = (data) => data, reload) => {
   const [state, setstate] = useState({ _data: null, loading: true, err: null });
 
   useDidUpdate(() => {
