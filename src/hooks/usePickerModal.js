@@ -20,10 +20,11 @@ const usePickerModal = (func, initalIndex = 0) => {
   return {
     // Set Picker index onChange
     setIndex: (index) =>
-      setPicker({
+      setPicker((prevState) => ({
+        ...prevState,
         index,
         visible: false,
-      }),
+      })),
 
     // Hide picker modal
     hideModal: () =>
@@ -32,6 +33,9 @@ const usePickerModal = (func, initalIndex = 0) => {
     // Show picker modal
     showModal: () =>
       setPicker((prevState) => ({ ...prevState, visible: true })),
+
+    negativeModal: () =>
+      setPicker((prevState) => ({ ...prevState, visible: !prevState.visible })),
 
     picker,
   };

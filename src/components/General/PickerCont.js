@@ -10,14 +10,13 @@ const PickerCont = ({
   text,
   handlePress,
 }) => (
-  <TouchableOpacity
-    onPress={handlePress}
-    style={[styles.container, contStyle]}
-  >
-    <Text style={[styles.text, textStyle]}>
-      {text}
-    </Text>
-    <MaterialIcons name="keyboard-arrow-down" size={20} style={[styles.icon, iconStyle]} />
+  <TouchableOpacity onPress={handlePress} style={[styles.container, contStyle]}>
+    <Text style={[styles.text, textStyle]}>{text}</Text>
+    <MaterialIcons
+      name="keyboard-arrow-down"
+      size={20}
+      style={[styles.icon, iconStyle]}
+    />
   </TouchableOpacity>
 );
 
