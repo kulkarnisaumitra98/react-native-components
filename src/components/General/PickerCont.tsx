@@ -1,16 +1,32 @@
-import React from 'react';
-import { StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import React from 'react';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { BORDER, WHITE } from '../../styles/colors';
+import {
+  CommonCompStyles,
+  TouchableOpacityOnPress,
+} from '../../types/common_types';
 
-const PickerCont = ({
+interface Props extends CommonCompStyles {
+  text: string;
+  handlePress?: TouchableOpacityOnPress;
+  disabled?: boolean;
+}
+
+const PickerCont: React.FC<Props> = ({
   contStyle,
   textStyle,
   iconStyle,
 
   text,
   handlePress,
+  disabled,
 }) => (
-  <TouchableOpacity onPress={handlePress} style={[styles.container, contStyle]}>
+  <TouchableOpacity
+    onPress={handlePress}
+    style={[styles.container, contStyle]}
+    disabled={disabled}
+  >
     <Text style={[styles.text, textStyle]}>{text}</Text>
     <MaterialIcons
       name="keyboard-arrow-down"
@@ -23,10 +39,10 @@ const PickerCont = ({
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    backgroundColor: '#fff',
+    backgroundColor: WHITE,
     elevation: 1,
     borderWidth: 0.5,
-    borderColor: '#ddd',
+    borderColor: BORDER,
     justifyContent: 'space-between',
     alignItems: 'center',
     borderRadius: 4,

@@ -20,6 +20,7 @@ export type StyImg = StyleProp<ImageStyle>;
 
 export interface CommonCompStyles {
   contStyle?: StyView;
+  containerStyle?: StyView;
   textStyle?: StyText;
 
   iconSource?: ImageSourcePropType;

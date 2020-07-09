@@ -1,11 +1,24 @@
 import React from 'react';
-import {
-  View, StyleSheet, TouchableOpacity,
-} from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import MyText from '../Texts/MyText';
 import { dimensionStyles } from '../../styles/style';
+import { StyView } from '../../types/common_types';
+import { OFFWHITE, TEXT_BLACK } from '../../styles/colors';
 
-const Header = ({
+interface Props {
+  title: string;
+  color?: string;
+
+  containerStyle?: StyView;
+  headingStyle?: StyView;
+
+  leftNav?: () => void;
+  leftNode: () => JSX.Element;
+  rightNav?: () => void;
+  rightNode: () => JSX.Element;
+}
+
+const Header: React.FC<Props> = ({
   title,
   color,
 
@@ -33,20 +46,16 @@ const Header = ({
 
 const styles = StyleSheet.create({
   container: {
-    // borderWidth: 1,
-    backgroundColor: '#f8f8f8',
+    backgroundColor: OFFWHITE,
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 16,
     alignItems: 'center',
-    position: 'absolute',
-    top: 0,
   },
 
   heading: {
-    color: '#404a57',
+    color: TEXT_BLACK,
     fontSize: 20,
-    // fontWeight: 'bold',
   },
 });
 

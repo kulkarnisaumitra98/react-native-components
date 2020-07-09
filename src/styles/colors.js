@@ -6,6 +6,7 @@ export const BLACK = '#000';
 // Grey
 export const GREY = 'grey';
 export const GREY_1 = '#707070';
+export const GREY_2 = '#777';
 
 // Yellow
 export const YELLOW = '#FFFF00';
@@ -38,3 +39,5 @@ export const SUCCESS_TEXT = '#4bb543';
 
 export const BUTTON_GREEN = '#A9DD7D';
 export const BUTTON_ORANGE = '#FEA15D';
+
+export const BUTTON_DISABLED = '#bcbec6';

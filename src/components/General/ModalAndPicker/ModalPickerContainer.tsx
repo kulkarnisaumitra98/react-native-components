@@ -16,10 +16,26 @@ import {
   WHITE,
 } from '../../../styles/colors';
 import { dimensionStyles, marginStyles } from '../../../styles/style';
+import { CommonCompStyles } from '../../../types/common_types';
 
 const dimensions = Dimensions.get('screen');
 
-const ModalPickerContainer = ({
+type CombinedProps = CommonCompStyles;
+
+interface Props extends CombinedProps {
+  pickerIndex: number;
+  title: string;
+  rows: { title: string, label: string }[];
+  visible: boolean;
+  hideModal: () => void;
+  handlePress: (index: number) => void;
+
+  height?: number;
+  container?: any;
+  exitCross?: any;
+}
+
+const ModalPickerContainer: React.FC<Props> = ({
   pickerIndex,
   handlePress,
   visible,
@@ -57,14 +73,14 @@ const ModalPickerContainer = ({
             <TouchableOpacity
               style={[
                 styles.rowCont,
-                index === pickerIndex ? { backgroundColor: BLUE_BUTTON } : {},
+                index === pickerIndex ? { backgroundColor: BLUE_BUTTON } : null,
               ]}
-              onPress={() => handlePress(index)}
+              onPress={() => handlePress?.(index)}
             >
               <Text
                 style={[
                   styles.rowText,
-                  index === pickerIndex ? { color: WHITE } : {},
+                  index === pickerIndex ? { color: WHITE } : null,
                 ]}
               >
                 {item.label}

@@ -1,10 +1,16 @@
-import { MaterialIcons } from '@expo/vector-icons';
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import { BLUE_BUTTON, BORDER, WHITE } from '../../../styles/colors';
+import { CommonCompStyles } from '../../../types/common_types';
+import PickerCont from '../PickerCont';
 import ModalPickerContainer from './ModalPickerContainer';
+import { CommonModalProps } from './types';
 
-const ModalAndPicker = ({
+type CombinedProps = CommonCompStyles & CommonModalProps;
+
+interface Props extends CombinedProps {}
+
+const ModalAndPicker: React.FC<Props> = ({
   contStyle,
   textStyle,
   iconStyle,
@@ -23,18 +29,18 @@ const ModalAndPicker = ({
     onPress={handlePressOnPicker}
     style={[styles.pickerCont, contStyle]}
   >
-    <Text style={[styles.pickerText, textStyle]}>{rows[index].label}</Text>
-    <MaterialIcons
-      name="keyboard-arrow-down"
-      size={25}
-      style={[styles.pickerIcon, iconStyle]}
+    <PickerCont
+      text={rows[index].label}
+      iconStyle={iconStyle}
+      disabled
+      textStyle={textStyle}
     />
     <ModalPickerContainer
       container={modalContStyle}
       title={title}
       pickerIndex={index}
       visible={visible}
-      handlePress={(idx) => handlePressModalOption(idx)}
+      handlePress={(idx) => handlePressModalOption?.(idx)}
       hideModal={hideModal}
       rows={rows}
     />

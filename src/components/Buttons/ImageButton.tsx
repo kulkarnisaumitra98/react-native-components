@@ -3,7 +3,7 @@ import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { getSquare } from '../../styles/style';
 import { CommonButtonProps } from './types';
 
-interface Props extends CommonButtonProps {
+interface Props extends Omit<CommonButtonProps, 'title'> {
   circle?: boolean;
   size?: number;
 }

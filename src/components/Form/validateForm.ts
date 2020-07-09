@@ -1,6 +1,4 @@
-/* eslint-disable no-nested-ternary */
 import { isEmpty } from '../../Utils/GeneralFunctions';
-
 
 // Some general form validations
 // Can manually alter, but config stucture should remain same
@@ -36,8 +34,8 @@ const validateForm = (field, value, fields, forcedTyped) => {
       };
 
       if (
-        newFields.confPassword.value
-				&& newFields.confPassword.value !== value
+        newFields.confPassword.value &&
+        newFields.confPassword.value !== value
       ) {
         newFields.confPassword.info = {
           err: true,
@@ -76,8 +74,9 @@ const validateForm = (field, value, fields, forcedTyped) => {
       break;
     }
     case 'confPassword':
-      result = value === newFields.password.value
-				&& !isEmpty(newFields.password.value);
+      result =
+        value === newFields.password.value &&
+        !isEmpty(newFields.password.value);
       newField = {
         ...newFields[field],
         value,
@@ -118,8 +117,8 @@ const validateForm = (field, value, fields, forcedTyped) => {
       };
 
       if (
-        newFields.confPassword.value
-				&& newFields.confPassword.value !== newFields.password.value
+        newFields.confPassword.value &&
+        newFields.confPassword.value !== newFields.password.value
       ) {
         newFields.confPassword.info = {
           err: true,
@@ -137,7 +136,7 @@ const validateForm = (field, value, fields, forcedTyped) => {
 
       // Fake response
       const data = {
-      	result: false,
+        result: false,
       };
 
       newField = {
@@ -156,8 +155,9 @@ const validateForm = (field, value, fields, forcedTyped) => {
 
       newFields.username = newField;
 
-      result = newFields.confPassword.value === newFields.password.value
-				&& !isEmpty(newFields.password.value);
+      result =
+        newFields.confPassword.value === newFields.password.value &&
+        !isEmpty(newFields.password.value);
       newField = {
         ...newFields[field],
         value,
@@ -181,6 +181,5 @@ const validateForm = (field, value, fields, forcedTyped) => {
 
   return newFields;
 };
-
 
 export default validateForm;
