@@ -4,7 +4,6 @@ import { paddingStyles } from '../../styles/style';
 import TitledInput from '../Inputs/TitledInput/TitledInput';
 import validateForm from './validateForm';
 
-
 // Reusable Form
 // The form config shoud be in following format =>
 /*
@@ -27,7 +26,6 @@ const getInputConfig = (config) => ({
   config
 });
 */
-
 
 const Form = ({ formConfig }) => {
   const [fields, setFields] = useState(formConfig);
