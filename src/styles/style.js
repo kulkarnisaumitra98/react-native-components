@@ -1,7 +1,6 @@
 import { StyleSheet, StatusBar, Dimensions } from 'react-native';
 
 export const marginStyles = StyleSheet.create({
-
   mtsb: { marginTop: StatusBar.currentHeight },
 
   m_0: { margin: 0 },
@@ -194,3 +193,13 @@ export const positionStyles = StyleSheet.create({
 });
 
 export const getSquare = (size) => ({ width: size, height: size });
+
+export const getCircleStyle = (size, additional) => ({
+  width: size,
+  height: size,
+  borderRadius: size,
+  overflow: 'hidden',
+  justifyContent: 'center',
+  alignItems: 'center',
+  ...additional,
+});

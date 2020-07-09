@@ -1,19 +1,24 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import { BLUE_BUTTON, WHITE } from '../../styles/colors';
+import { BLUE_BUTTON, WHITE, BLACK } from '../../styles/colors';
 import { dimensionStyles } from '../../styles/style';
 import MyText from '../Texts/MyText';
+import { CommonButtonProps } from './types';
 
-const Button = ({
+interface Props extends CommonButtonProps {}
+
+const Button: React.FC<Props> = ({
   handlePress,
   long,
   title,
-  containerStyle,
+  contStyle,
   textStyle,
+  touchConfig,
 }) => (
   <TouchableOpacity
-    style={[styles.container, containerStyle, long ? dimensionStyles.w_100 : null]}
+    style={[styles.container, contStyle, long ? dimensionStyles.w_100 : null]}
     onPress={handlePress}
+    {...touchConfig}
   >
     <MyText style={[styles.text, textStyle]}>{title}</MyText>
   </TouchableOpacity>
@@ -30,7 +35,8 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     margin: 8,
     elevation: 2,
-    shadowColor: '#000',
+
+    shadowColor: BLACK,
     shadowOffset: {
       width: 0,
       height: 2,
@@ -41,7 +47,7 @@ const styles = StyleSheet.create({
 
   text: {
     color: WHITE,
-    fontSize: 14,
+    fontSize: 13,
   },
 });
 

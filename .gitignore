@@ -13,8 +13,8 @@ web-report/
 # macOS
 .DS_Store
 
-src/temp/*
-src/Playground/*
+src/temp/
+src/Playground/
 .expo/
 .expo-shared/
 .vscode/

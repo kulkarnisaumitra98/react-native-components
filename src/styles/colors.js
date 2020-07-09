@@ -4,6 +4,8 @@ export const OFFWHITE = '#f8f8f8';
 export const BLACK = '#000';
 
 // Grey
+export const GREY = 'grey';
+export const GREY_1 = '#707070';
 
 // Yellow
 export const YELLOW = '#FFFF00';

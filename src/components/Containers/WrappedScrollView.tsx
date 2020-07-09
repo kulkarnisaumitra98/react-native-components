@@ -1,8 +1,21 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  StyleProp,
+  ViewStyle,
+  ScrollViewProps,
+} from 'react-native';
 import Container from './Container';
 
-const WrappedScrollView = ({
+interface Props {
+  contStyle?: StyleProp<ViewStyle>;
+  scrollContStyle?: StyleProp<ViewStyle>;
+  contentContStyle?: StyleProp<ViewStyle>;
+  config?: ScrollViewProps;
+}
+
+const WrappedScrollView: React.FC<Props> = ({
   contStyle,
   scrollContStyle,
   contentContStyle,
@@ -10,8 +23,9 @@ const WrappedScrollView = ({
   children,
   config,
 }) => (
-  <Container style={contStyle}>
+  <Container contStyle={[contStyle, { flex: 1 }]}>
     <ScrollView
+      showsVerticalScrollIndicator={false}
       style={[styles.container, scrollContStyle]}
       contentContainerStyle={[styles.contentCont, contentContStyle]}
       {...config}
